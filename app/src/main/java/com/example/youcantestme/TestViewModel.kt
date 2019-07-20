@@ -9,6 +9,7 @@ class TestViewModel: ViewModel(){
     //TODO decouple dependency
     val testRepository = TestRepository()
     var stringList = testRepository.getNumStringList()
+    val string = "Testing DataBinding"
 
     // Get Button LiveData
     private val _onGetButtonPressedStatus = MutableLiveData<Boolean>()
