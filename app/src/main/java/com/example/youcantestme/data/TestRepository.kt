@@ -4,7 +4,7 @@ class TestRepository {
     companion object {
         val numListString = listOf("one","two","three","four","five")
     }
-    fun getNumList() : List<String>{
+    fun getNumStringList() : List<String>{
         return numListString
     }
 

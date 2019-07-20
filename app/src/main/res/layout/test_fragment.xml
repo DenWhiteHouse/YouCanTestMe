@@ -2,6 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools">
     <data>
+        <variable name="viewModel" type="com.example.youcantestme.TestViewModel"/>
 
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -11,12 +12,12 @@
 
         <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:id="@+id/number_text_view"
+                android:layout_height="16dp" android:id="@+id/number_text_view"
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
                 app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-                app:layout_constraintVertical_bias="0.133" tools:text="Number" android:textAlignment="center"/>
+                app:layout_constraintVertical_bias="0.133" android:textAlignment="center" android:text="Default"/>
         <Button
                 android:text="@string/get_data"
                 android:layout_width="wrap_content"
@@ -27,6 +28,6 @@
                 android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginStart="8dp"
                 app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintVertical_bias="0.2"/>
+                app:layout_constraintVertical_bias="0.2" android:onClick="@{(v)-> viewModel.onGetButtonPressed()}"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
