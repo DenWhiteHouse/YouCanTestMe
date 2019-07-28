@@ -1,5 +1,6 @@
 package com.example.youcantestme.fragments
 
+import android.app.Application
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,12 +11,20 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.Observer
 import com.example.youcantestme.R
 import com.example.youcantestme.TestViewModel
+import com.example.youcantestme.appModule
 import com.example.youcantestme.databinding.TestFragmentBinding
+import org.koin.android.ext.koin.androidContext
+import org.koin.android.ext.koin.androidLogger
+import org.koin.android.scope.currentScope
+import org.koin.android.viewmodel.ext.android.viewModel
+import org.koin.core.context.startKoin
 import java.util.*
 
 class TestFragment : Fragment() {
 
-    private lateinit var viewModel: TestViewModel
+    // Lazy Inject ViewModel
+    val viewModel: TestViewModel by viewModel()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,8 +36,9 @@ class TestFragment : Fragment() {
             inflater, R.layout.test_fragment, container, false
         )
 
+
         // Get the viewmodel
-        viewModel = ViewModelProviders.of(this).get(TestViewModel::class.java)
+        //viewModel = ViewModelProviders.of(this).get(TestViewModel::class.java)
         binding.setLifecycleOwner(this)
         binding.viewModel = viewModel
 

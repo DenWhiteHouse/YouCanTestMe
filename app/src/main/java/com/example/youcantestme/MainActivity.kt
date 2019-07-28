@@ -2,6 +2,9 @@ package com.example.youcantestme
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import org.koin.android.ext.koin.androidContext
+import org.koin.android.ext.koin.androidLogger
+import org.koin.core.context.startKoin
 
 class MainActivity : AppCompatActivity() {
 

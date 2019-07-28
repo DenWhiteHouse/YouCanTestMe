@@ -1,10 +1,14 @@
 package com.example.youcantestme.data
 
-class TestRepository {
+interface TestRepoInterface {
+    fun getNumStringList() : List<String>
+}
+
+class TestRepository : TestRepoInterface {
     companion object {
         val numListString = listOf("one","two","three","four","five")
     }
-    fun getNumStringList() : List<String>{
+    override fun getNumStringList() : List<String>{
         return numListString
     }
 

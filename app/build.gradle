@@ -10,6 +10,12 @@ android {
     dataBinding {
         enabled = true
     }
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.youcantestme"
@@ -43,4 +49,8 @@ dependencies {
 
     // Lifecycles
     implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+
+    //Koin Injection
+    implementation 'org.koin:koin-android-viewmodel:2.0.1'
+    implementation 'org.koin:koin-android-scope:2.0.1'
 }
